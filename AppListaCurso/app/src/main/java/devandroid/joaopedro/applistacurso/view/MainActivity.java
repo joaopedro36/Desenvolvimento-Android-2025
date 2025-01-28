@@ -9,8 +9,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.joaopedro.applistacurso.R;
+import devandroid.joaopedro.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    Pessoa pessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +25,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        pessoa = new Pessoa();
     }
 }
