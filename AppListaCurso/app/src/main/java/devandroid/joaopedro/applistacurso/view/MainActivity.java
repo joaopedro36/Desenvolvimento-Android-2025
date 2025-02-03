@@ -14,9 +14,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.joaopedro.applistacurso.R;
+import devandroid.joaopedro.applistacurso.controller.PessoaControler;
 import devandroid.joaopedro.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    PessoaControler controler;
 
     Pessoa pessoa;
     Pessoa outraPessoa;
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        controler = new PessoaControler();
+        controler.toString();
 
         pessoa = new Pessoa();
 
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Salvo " + pessoa.toString(), Toast.LENGTH_LONG).show();
 
+                controler.salvar(pessoa);
             }
         });
 
